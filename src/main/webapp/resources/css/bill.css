@@ -1,0 +1,14 @@
+html,body{
+	position: absolute; padding:0; margin:0;
+}
+
+.wrap{
+	background-image : url('backg.jpg');
+	position : relative;
+  	min-height: 500px;
+  	text-align: center;
+}
+
+#subject{
+	padding-top : 10%;
+}

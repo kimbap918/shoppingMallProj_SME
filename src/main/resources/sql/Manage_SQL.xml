@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="manage">
+
+<!-- 관리자 페이지 유저 정보 -->		
+	<select id="userList" parameterType="hashMap" resultType="hashmap">
+		SELECT
+			 id
+			 , name
+			 , pwd
+			 , email
+			 , custRank
+			 , joinDate
+		FROM customer_manage		
+	<choose>
+		<when test="condition == 'id' and keyword != ('')">
+			WHERE id LIKE concat('%',#{keyword},'%')
+		</when>					
+		<when test="condition == 'name' and keyword != ('')">
+			WHERE name LIKE concat('%',#{keyword},'%')  
+		</when>
+		<when test="condition == 'custRank' and keyword !=('')">
+			WHERE custRank LIKE concat('%',#{keyword},'%')
+		</when>
+	</choose>
+	</select>
+<!-- 유저 등급 수정 -->
+	<update id="updateUser" parameterType="hashMap" >
+		UPDATE customer_manage
+		SET custRank = #{custRank}
+		WHERE id = #{id}
+				
+	</update>
+<!-- 유저 정보 삭제 -->
+	<delete id="deleteUser" parameterType="hashMap">
+	DELETE FROM customer_manage
+	WHERE id = #{id}
+	</delete>
+<!-- 제품 정보 조회 -->
+	<select id="productList" parameterType="hashMap" resultType="hashmap">
+		select a.*, t.product_name, t.product_price
+ 		from (SELECT d.*, t.gender
+		FROM im_db.product_detail d, im_db.product_title t
+		where d.product_code = t.product_code) a, shop_db.goods_detail t
+    	where a.product_code = t.product_code;
+		<choose>				
+			<when test="condition == 'product_code' and keyword != ('')">
+				WHERE a.product_code LIKE concat('%',#{keyword},'%')  
+			</when>
+			<when test="condition == 'color_name' and keyword !=('')">
+				WHERE color_name LIKE concat('%',#{keyword},'%')
+			</when>
+			<when test="condition == 'gender' and keyword !=('')">
+				WHERE gender LIKE concat('%',#{keyword},'%')
+			</when>
+		</choose>
+	</select>
+	
+	<update id="updateOrder" parameterType="hashMap" >
+		UPDATE order_manage
+		SET shipStat = #{shipStat}
+		WHERE orderNo = #{orderNo}
+				
+	</update>
+	
+	<delete id="deleteProduct" parameterType="hashMap">
+	DELETE FROM test_goods
+	WHERE product_code = #{product_code}
+	</delete>
+	
+<!-- 관리자 페이지 주문목록 -->		
+
+	<select id="orderList" parameterType="hashMap" resultType="hashmap">
+		SELECT *
+		FROM order_manage
+	<choose>
+		<when test="condition == 'custName' and keyword != ('')">
+			WHERE custName LIKE concat('%',#{keyword},'%')
+			<!-- WHERE id LIKE custId('%',#{keyword},'%') -->
+		</when>					
+		<when test="condition == 'orderStatus' and keyword != ('')">
+			WHERE orderStatus LIKE concat('%',#{keyword},'%')  
+		</when>
+		<when test="condition == 'orderNo' and keyword !=('')">
+			WHERE orderNo LIKE concat('%',#{keyword},'%')
+		</when>
+	</choose>
+	</select>
+
+		
+	<delete id="deleteOrder" parameterType="hashMap">
+	DELETE FROM order_manage
+	WHERE orderNo = #{orderNo}
+	</delete>
+
+</mapper>
