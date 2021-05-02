@@ -39,14 +39,21 @@
 	</delete>
 <!-- 제품 정보 조회 -->
 	<select id="productList" parameterType="hashMap" resultType="hashmap">
-		select a.*, t.product_name, t.product_price
- 		from (SELECT d.*, t.gender
+
+		SELECT d.*, t.gender, s.product_name, s.product_price
+		FROM im_db.product_detail as d
+		INNER JOIN im_db.product_title as t ON d.product_code = t.product_code
+		INNER JOIN shop_db.goods_detail as s ON t.product_code = s.product_code;
+		
+		<!--  SELECT a.*, a.product_code, a.color_name, t.product_name, t.product_price
+		FROM (SELECT d.*, t.gender
 		FROM im_db.product_detail d, im_db.product_title t
-		where d.product_code = t.product_code) a, shop_db.goods_detail t
-    	where a.product_code = t.product_code;
+		WHERE d.product_code = t.product_code) a, shop_db.goods_detail t
+		WHERE a.product_code = t.product_code; -->
+
 		<choose>				
 			<when test="condition == 'product_code' and keyword != ('')">
-				WHERE a.product_code LIKE concat('%',#{keyword},'%')  
+				WHERE product_code LIKE concat('%',#{keyword},'%')  
 			</when>
 			<when test="condition == 'color_name' and keyword !=('')">
 				WHERE color_name LIKE concat('%',#{keyword},'%')
@@ -59,7 +66,7 @@
 	
 	<update id="updateOrder" parameterType="hashMap" >
 		UPDATE order_manage
-		SET shipStat = #{shipStat}
+		SET orderStatus = #{orderStatus}
 		WHERE orderNo = #{orderNo}
 				
 	</update>
