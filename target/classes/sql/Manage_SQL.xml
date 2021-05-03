@@ -40,20 +40,35 @@
 <!-- 제품 정보 조회 -->
 	<select id="productList" parameterType="hashMap" resultType="hashmap">
 
-		SELECT d.*, t.gender, s.product_name, s.product_price
+		SELECT d.*, t.gender
+		FROM im_db.product_detail as d
+		LEFT OUTER JOIN im_db.product_title as t 
+		ON d.product_code = t.product_code
+    	
+		<!-- 1번 SELECT d.*, t.gender
+		FROM im_db.product_detail as d
+		LEFT OUTER JOIN im_db.product_title as t 
+		ON d.product_code = t.product_code -->
+		
+		<!-- 2번 SELECT d.*, t.gender, s.product_name, s.product_price
+		FROM im_db.product_detail as d
+		LEFT OUTER JOIN im_db.product_title as t ON d.product_code = t.product_code
+		LEFT OUTER JOIN shop_db.goods_detail as s ON t.product_code = s.product_code;  -->
+		
+		<!-- 3번 SELECT d.*, t.gender, s.product_name, s.product_price
 		FROM im_db.product_detail as d
 		INNER JOIN im_db.product_title as t ON d.product_code = t.product_code
-		INNER JOIN shop_db.goods_detail as s ON t.product_code = s.product_code;
-		
-		<!--  SELECT a.*, a.product_code, a.color_name, t.product_name, t.product_price
-		FROM (SELECT d.*, t.gender
+		INNER JOIN shop_db.goods_detail as s ON t.product_code = s.product_code; -->
+			
+		<!-- 4번 select a.*, s.product_name, s.product_price
+ 		from (SELECT d.*, t.gender
 		FROM im_db.product_detail d, im_db.product_title t
-		WHERE d.product_code = t.product_code) a, shop_db.goods_detail t
-		WHERE a.product_code = t.product_code; -->
+		where d.product_code = t.product_code) a, shop_db.goods_detail s
+    	where a.product_code = s.product_code; -->
 
 		<choose>				
 			<when test="condition == 'product_code' and keyword != ('')">
-				WHERE product_code LIKE concat('%',#{keyword},'%')  
+				WHERE d.product_code LIKE concat('%',#{keyword},'%')
 			</when>
 			<when test="condition == 'color_name' and keyword !=('')">
 				WHERE color_name LIKE concat('%',#{keyword},'%')

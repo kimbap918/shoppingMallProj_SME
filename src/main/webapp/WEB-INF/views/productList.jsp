@@ -30,12 +30,10 @@
 					<col style="width: auto;" />
 					<col style="width: auto;" />
 					<col style="width: auto;" />
-					<col style="width: auto;" />
 				</colgroup>
 				<thead>
 					<tr>
 						<th>제품코드</th>
-						<th>제품명</th>
 						<th>색상</th>
 						<th>성별</th>
 						<th>S 사이즈</th>
@@ -58,7 +56,6 @@
 							<c:forEach var="list" items="${list}">
 								<tr>
 									<td><c:out value="${list.product_code}" /></td>
-									<td><c:out value="${list.product_name}" /></td>
 									<td><c:out value="${list.color_name}" /></td>
 									<td><c:out value="${list.gender}" /></td>
 									<td><c:out value="${list.s}" /></td>
