@@ -35,9 +35,9 @@ response.setDateHeader("Expires", 0L);
             <li class="slide slide3">
                 <div class="container slide_contents">
                     <div class="contents jumbotron">
-                        <h2>아직공백임다</h2>
-                        <h3>여기는 없소요</h3>
-                        <p>추가할께요..</p>
+                        <h2>아직공백입니다.</h2>
+                        <h3>여기는 없어</h3>
+                        <p>추가할게요..</p>
                     </div>
                 </div>
             </li>
@@ -78,3 +78,4 @@ response.setDateHeader("Expires", 0L);
               </c:forEach>
             </ul>
         </section>
+       </main>

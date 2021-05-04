@@ -1,18 +1,18 @@
 package com.example.controller;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
+//import java.util.ArrayList;
+//import java.util.Arrays;
+//import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+//import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 import org.json.simple.JSONObject;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
+//import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,11 +22,11 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.service.BoardService;
-import com.example.service.productService;
+//import com.example.service.productService;
 
 @Controller
 @RestController
-@RequestMapping(value = "./board")
+/*@RequestMapping(value = "/board")*/
 public class BoardController {
 
 	Logger log = Logger.getLogger(this.getClass());
@@ -99,12 +99,12 @@ public class BoardController {
 		return jobj;
 	}
 
-	@RequestMapping(value = "board/boardread.do", method = RequestMethod.GET)
+	@RequestMapping(value = "boardread.do", method = RequestMethod.GET)
 	public ModelAndView boardread(@RequestParam Map<String, Object> map) {
 
 		log.debug("Request Parameter : " + map);
 
-		ModelAndView mv = new ModelAndView("board/boardread");
+		ModelAndView mv = new ModelAndView("/boardread");
 		Map<String, Object> boardread = boardService.boardread(map);
 
 		log.info("boardread 결과 : " + boardread);
@@ -113,12 +113,12 @@ public class BoardController {
 		return mv;
 	}
 
-	@RequestMapping(value = "board/boardlist.do", method = RequestMethod.GET)
+	@RequestMapping(value = "boardlist.do", method = RequestMethod.GET)
 	public ModelAndView boardlist(@RequestParam Map<String, Object> map) {
 
 		log.debug("Request Parameter : " + map);
 
-		ModelAndView mv = new ModelAndView("board/boardlist");
+		ModelAndView mv = new ModelAndView("/boardlist");
 		List<Map<String, Object>> list = boardService.boardlist(map);
 
 		log.debug("search SQL result : " + list);

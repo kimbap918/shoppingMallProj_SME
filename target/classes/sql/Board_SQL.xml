@@ -14,7 +14,9 @@
    
    <!-- 게시판 리스트 -->
        <select id="boardlist" parameterType="hashMap" resultType="hashMap">
-   select * from board_manage
+   	SELECT @rownum:=@rownum+1 rnum, T.*
+	FROM shop_db.board_manage T,(SELECT @ROWNUM := 0) TMP
+	ORDER BY regdate DESC, rnum DESC;
    </select>
    <!-- 게시글 조회 -->
    <select id="boardread" parameterType="hashMap" resultType="hashMap">

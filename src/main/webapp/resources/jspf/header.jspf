@@ -2,31 +2,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<script> console.log('header'); </script>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Shopy shop any where</title>
-    <!-- <meta name="keywords" content="shopping mall, jacket, men, women">
-    <meta name="description" content="shop any where for women and men's ware">
-    <meta name="robots" content="index, follow"> -->
-
-    <!-- open graph -->
-	<!-- <meta property="og:title" content="Shopy shop any where" />
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content="shop any where for women and men's ware" />
-    <meta property="og:url" content="http://www.shopy.com" />
-    <meta property="og:image" content="http://www.shopy.com/images/logo.png" /> -->
-
-    <!-- favicon -->
-    <!-- <link rel="manifest" href="images/favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="resources/images/favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff"> -->
-
+    <title>코트의 중심 SME 입니다.</title>
+   
     <!-- fontawesome -->
     <script src="resources/Js/all.min.js"></script>
     <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -35,9 +19,6 @@
 
     <!--bootstrap grid-->
     <link rel="stylesheet" href="resources/css/bootstrap-grid.min.css">
-    <!-- <link rel="stylesheet" href="resources/css/star-rating.min.css"> -->
-    <!-- <link rel="stylesheet" href="resources/css/bootstrap.css"> 충돌 조심 -->
-    <!-- <link rel="stylesheet" href="resources/css/bootstrap.min.css"> 충돌 조심-->
     <link rel="stylesheet" href="resources/css/bootstrap-theme.css">
     <link rel="stylesheet" href="resources/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="resources/css/header.css">
@@ -61,11 +42,7 @@ alert('${map.msg}');
                     <ul class="contact_list">
                         <li>
                              <span><a href="checkgoods.do"><img alt="" src="resources/images/box.png" 
-                             width="20px" height="20px">주문확인!</span></a>
-                        </li>
-                        <li>
-                            <!-- <span class="phone sprites">Phone</span>
-                            <span>453-5553-996</span> -->
+                             width="20px" height="20px">주문확인!</a></span>
                         </li>
                     </ul>
                     <ul class="social_list">
@@ -90,7 +67,7 @@ alert('${map.msg}');
             <div class="container">
                 <div class="row justify-content-between">
                     <div class="gnb">
-                        <h1 class="logo"><a href="index.do">Shopy Logo</a></h1>
+                        <h1 class="logo"><a href="index.do">SME Logo</a></h1>
                         <ul>
                             <li><a href="">Products</a></li>
                             <li><a href="">Hot Deals</a></li>

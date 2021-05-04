@@ -36,7 +36,7 @@
                  
    						<div class="form-group">                 
                            <label for="regdate" class="col-sm-2 control-label">작성날짜</label>
-                           <fmt:formatDate value="${boardread.regdate}" pattern="yyyy-MM-dd"/>               
+                           <fmt:formatDate value="${boardread.regdate}" pattern="yyyy-MM-dd hh:mm:ss"/>               
                              </div>
       
                <div>
@@ -92,7 +92,7 @@
          $("#boarddelete_btn").click(function() {
             let bno = $("#bno").val();
 
-            if(confirm("해당 글을 삭제할거냐")){
+            if(confirm("해당 글을 삭제하시겠습니까?")){
                // alert(bno + $('#writer').val());   값이 정상적으로 받아와지나 1차 확인용 알랏
                console.log(bno);
             }else return;
@@ -116,7 +116,7 @@
                },
                error : function(error) {
 
-                  alert("error : 성규 잘하자?", error);
+                  alert("error : 에러", error);
                }
             });
          });
@@ -145,7 +145,7 @@
                
             let data = $('form[name=readForm]').serializeObject();
 
-               if(!confirm("해당 글을 수정할거냐")){
+               if(!confirm("해당 글을 수정하시겠습니까?")){
                //   alert(bno + $('#writer').val());   //값이 정상적으로 받아와지나 1차 확인용 알랏
                   return;
                }

@@ -37,7 +37,7 @@ public class BoardDAO extends AbstractDAO {
  	* 게시판리스트부르기
 	*/
 	public List<Map<String, Object >> boardlist(Map<String, Object> map) { 
-		return  (List<Map<String, Object >>) selectList ("board.boardlist", map);
+		return  (List<Map<String, Object >>) selectList ("boardlist", map);
 	}
 			   
 }
