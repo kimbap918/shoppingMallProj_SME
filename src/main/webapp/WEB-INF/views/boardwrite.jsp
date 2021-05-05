@@ -19,6 +19,7 @@
 	                        <option value="상품관련 문의">상품 관련문의</option>
 	                        <option value="사이즈 문의">사이즈 문의</option>
 	                        <option value="재입고 문의">재입고 문의</option>
+	                         <option value="배송 문의">배송관련 문의</option>
                         </select>
                      </div>
                      
@@ -71,7 +72,7 @@
          
          $.ajax({
             type : 'post',
-            async : true,   //(아마) 기본값이 true라 안해줘도 될듯?ㅎㅎ나중에 찾아보시고...
+            async : true,
             data : form,
             url : "boardWriteAjax.do",
             dataType : "json",

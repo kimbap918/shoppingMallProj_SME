@@ -77,7 +77,7 @@ public class BoardController {
 		int rs = boardService.boarddelete(bno);
 		if (rs > 0) {
 			jobj.put("code", 200);
-			req.getSession().setAttribute("userInfo", map);
+		//	req.getSession().setAttribute("userInfo", map);
 		}
 
 		return jobj;

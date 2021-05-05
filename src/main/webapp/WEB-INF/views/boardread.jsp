@@ -15,13 +15,13 @@
          <section id="container">
               <form name="readForm" onsubmit="return false;">
               
-                        <div class="form-group">
+                        <div class="form-group" style="display:none">
                            <label for="bno" >글 번호</label>
-                           <input type="text" class= "form-control2" id="bno" name="bno" value="${boardread.bno}" readonly/>
+                           <input type="text" class= "form-control2" id="bno" name="bno" value="${boardread.bno}" readonly />
                         </div>
                         <div class="form-group">
                            <label for="title" class="col-sm-2 control-label">제목</label>
-                           <input type="text" class= "form-control" id="title" name="title" value="${boardread.title}"/>
+                           <input type="text" class= "form-control" id="title" name="title" value="${boardread.title}" />
                         </div>
                     
                         <div class="form-group">
@@ -93,7 +93,7 @@
             let bno = $("#bno").val();
 
             if(confirm("해당 글을 삭제하시겠습니까?")){
-               // alert(bno + $('#writer').val());   값이 정상적으로 받아와지나 1차 확인용 알랏
+               // alert(bno + $('#writer').val());   값이 정상적으로 받아와지나 1차 확인용
                console.log(bno);
             }else return;
             

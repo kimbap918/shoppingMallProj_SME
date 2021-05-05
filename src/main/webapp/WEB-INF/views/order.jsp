@@ -92,7 +92,7 @@ System.out.println("세션아이디 " + test);
 
 <!-- 총 금액 합산 -->
 <div class="panel-heading">전체가격</div>
-<c:set var="last" value="${sum + 250000}"/>
+<c:set var="last" value="${sum + 4000}"/>
 <table class="table">
 <thead>
 <tr>
@@ -103,10 +103,10 @@ System.out.println("세션아이디 " + test);
 </thead>
 <tbody>
 <tr>
-<div><td><strong>${sum}</strong></td></div>
-<div><td><strong>250000</strong></td></div>
-<div><td><strong>0</strong></td></div>
-<div><td><strong>${last}</strong></td></div>
+<td><strong><fmt:formatNumber value="${sum}" pattern="#,###" />원</strong></td>
+<td><strong>4,000원</strong></td>
+<td><strong>0</strong></td>
+<td><strong><fmt:formatNumber value="${last}" pattern="#,###" />원</strong></td>
 </tr>
 </tbody>
 </table>
@@ -126,11 +126,11 @@ System.out.println("세션아이디 " + test);
 </label><em><span class="op-bank-dc-price fc-red"></span></em>
 <select name="pay_data" class="w280 MK_bank_select_list MK_pay_add_choice">
 <option value='' disabled="disabled">입금 계좌번호 선택(반드시 주문자 성함으로 입금)</option>
-<option value="농협 999-9999-9999-99 (예금주:(주)SME)" >농협 999-9999-9999-99 (예금주:(주)SME)</option>
+<option value="농협 302-0019-5478-21 (예금주:(주)SME)" >농협 302-0019-5478-21 (예금주:(주)SME)</option>
 <option value="하나은행 999-999999-99999 (예금주:(주)SME)" >하나은행 999-999999-99999 (예금주:(주)SME)</option>  
-<option value="기업은행 999-999999-99-999 (예금주:(주)SME)" >기업은행 999-999999-99-999 (예금주:(주)SME)</option>                       
+<option value="기업은행 010-8537-9098 (예금주:(주)SME)" >기업은행 010-8537-9098 (예금주:(주)SME)</option>                       
 <option value="국민은행 999999-99-999999 (예금주:(주)SME)" >국민은행 999999-99-999999 (예금주:(주)SME)</option>                       
-<option value="우리은행 9999-999-999999 (예금주:(주)SME)" >우리은행 9999-999-999999 (예금주:(주)SME)</option>
+<option value="우리은행 1002-751-504836 (예금주:(주)SME)" >우리은행 1002-751-504836 (예금주:(주)SME)</option>
 </select>  
 </li>
 <li><input type="radio" class="chk-rdo" name="radio_paymethod" value="PAYCO" /> 페이코(PAYCO)</li>
