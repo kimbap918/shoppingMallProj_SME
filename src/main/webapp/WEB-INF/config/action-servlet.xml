@@ -52,9 +52,11 @@
             <mvc:exclude-mapping path="/loginCheck.do"/>
             <!-- Test -->
             <mvc:exclude-mapping path="/test.do"/>
-
             <bean id="loginInterceptor" class="com.example.common.logger.LoginInterceptor"/>
-            
+        </mvc:interceptor>
+    	    <mvc:interceptor>
+        	<mvc:mapping path="/manage.do" />
+        	<bean id="AdminInterceptor" class="com.example.common.logger.AdminInterceptor" />
         </mvc:interceptor>
     </mvc:interceptors>
     
