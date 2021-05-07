@@ -7,18 +7,18 @@
 
 	<!-- 아이디 중복체크 -->
 	 <select id="idcheck" parameterType="String" resultType="Integer">
-	    select count(*) from customer_manage 
+	    select count(*) from shop_db.customer_manage 
 	    where id = #{id}
 	 </select>
 	
 	<select id="search" parameterType="hashMap" resultType="hashmap">
 		SELECT *
-		FROM test_goods
+		FROM shop_db.test_goods
 			WHERE product_name LIKE concat('%',#{search},'%')
 	</select>
 	 <!-- 게시글 수정 -->
 	<update id="boardupdate" parameterType="hashMap">
-    update board_manage set
+    update shop_db.board_manage set
     title = #{title},
     content = #{content}
     Where bno = #{bno}
@@ -26,7 +26,7 @@
    
 	<select id="loginCheck" parameterType="hashMap" resultType="hashmap">
 		SELECT * 
-		FROM customer_manage
+		FROM shop_db.customer_manage
 		WHERE id = #{id} AND pwd = #{pwd}
 	</select>
 
@@ -34,7 +34,7 @@
 <!-- insert	 -->
 
 	<insert id="joinCheck" parameterType="hashMap" >
-		insert into customer_manage (id, pwd, name, addr, addr2, addr3, addr4, addr5, contact, email, sex, birth)
+		insert into shop_db.customer_manage (id, pwd, name, addr, addr2, addr3, addr4, addr5, contact, email, sex, birth)
 			values(
 					#{id},
 					#{pwd},
@@ -54,7 +54,7 @@
 <!-- update	 -->
 	<update id="updateMember" parameterType="hashMap">
 	
-		update customer_manage
+		update shop_db.customer_manage
 		set
 			pwd = #{pwd},
 			name = #{name},

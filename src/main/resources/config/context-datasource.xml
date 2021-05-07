@@ -5,9 +5,9 @@
 	
 	<bean id="dataSourceSpied" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://3.139.73.94/shop_db?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=UTC&amp;autoReconnect=true" />
-		<property name="username" value="im_user" /> 
-		<property name="password" value="cloth" />
+		<property name="url" value ="jdbc:mysql://choicho.mysql.database.azure.com:3306/?serverTimezone=UTC"/>
+		<property name="username" value="choi_admin@choicho" /> 
+		<property name="password" value="jun901800!" />
 	</bean>
 	
 	<bean id="dataSource" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">

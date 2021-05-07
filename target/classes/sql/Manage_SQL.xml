@@ -12,7 +12,7 @@
 			 , email
 			 , custRank
 			 , joinDate
-		FROM customer_manage		
+		FROM shop_db.customer_manage		
 	<choose>
 		<when test="condition == 'id' and keyword != ('')">
 			WHERE id LIKE concat('%',#{keyword},'%')
@@ -27,14 +27,14 @@
 	</select>
 <!-- 유저 등급 수정 -->
 	<update id="updateUser" parameterType="hashMap" >
-		UPDATE customer_manage
+		UPDATE shop_db.customer_manage
 		SET custRank = #{custRank}
 		WHERE id = #{id}
 				
 	</update>
 <!-- 유저 정보 삭제 -->
 	<delete id="deleteUser" parameterType="hashMap">
-	DELETE FROM customer_manage
+	DELETE FROM shop_db.customer_manage
 	WHERE id = #{id}
 	</delete>
 <!-- 제품 정보 조회 -->
@@ -87,7 +87,7 @@
 	</update>
 	
 	<delete id="deleteProduct" parameterType="hashMap">
-	DELETE FROM test_goods
+	DELETE FROM shop_db.test_goods
 	WHERE product_code = #{product_code}
 	</delete>
 	
@@ -95,7 +95,7 @@
 
 	<select id="orderList" parameterType="hashMap" resultType="hashmap">
 		SELECT *
-		FROM order_manage
+		FROM shop_db.order_manage
 	<choose>
 		<when test="condition == 'custName' and keyword != ('')">
 			WHERE custName LIKE concat('%',#{keyword},'%')
@@ -112,7 +112,7 @@
 
 		
 	<delete id="deleteOrder" parameterType="hashMap">
-	DELETE FROM order_manage
+	DELETE FROM shop_db.order_manage
 	WHERE orderNo = #{orderNo}
 	</delete>
 

@@ -19,7 +19,7 @@
 <!-- 제품 상세페이지 문장 -->
 <select id="detailPage" parameterType="hashMap" resultType="hashMap">
 		SELECT * 
-		FROM test_goods
+		FROM shop_db.test_goods
 		where product_code = #{product_code}
 </select>
 	
@@ -101,7 +101,7 @@
 
 	<!-- 장바구니 -->
 	<insert id="cart" parameterType="hashMap">
-		insert into customer_cart (id, prodCode, prodName,size, color, count, price)
+		insert into shop_db.customer_cart (id, prodCode, prodName,size, color, count, price)
 		values(
 			#{id},
 			#{prodCode},

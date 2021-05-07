@@ -32,7 +32,7 @@ public class AdminInterceptor extends HandlerInterceptorAdapter {
     	log.info("AdminCheck : " + request.getParameter("AdminUserInfo"));
     	 	try {
              //userData 세션key를 가진 정보가 널일경우 로그인페이지로 이동
-             if(request.getParameter("AdminUserInfo") == null){
+             if(request.getParameter("AdminUserInfo") != null){
                  log.error("can not search session ... ");
                  response.sendRedirect("index.do");
                  return false;

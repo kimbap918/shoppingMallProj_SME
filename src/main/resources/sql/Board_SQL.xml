@@ -4,7 +4,7 @@
 <mapper namespace="board">
 <!-- 게시판 -->
    <insert id="boardwrite" parameterType="hashMap">
-      insert into board_manage( title, content, writer)
+      insert into shop_db.board_manage( title, content, writer)
       VALUES(
             #{title}, 
             #{content}, 
@@ -20,11 +20,11 @@
    </select>
    <!-- 게시글 조회 -->
    <select id="boardread" parameterType="hashMap" resultType="hashMap">
-    select bno, title, content, writer, regdate from board_manage where bno = #{bno}
+    select bno, title, content, writer, regdate from shop_db.board_manage where bno = #{bno}
     </select>
 <!-- 게시글 수정 -->
 	<update id="boardupdate" parameterType="hashMap">
-    update board_manage set
+    update shop_db.board_manage set
     title = #{title},
     content = #{content}
     Where bno = #{bno}
@@ -32,7 +32,7 @@
    
    <!-- 게시글삭제 -->
    <delete id="boarddelete" parameterType ="String">
-     Delete from board_manage 
+     Delete from shop_db.board_manage 
      where bno = ${bno}
    </delete>
 </mapper>

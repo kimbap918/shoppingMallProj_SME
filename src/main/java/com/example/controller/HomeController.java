@@ -144,7 +144,7 @@ public class HomeController {
 
 		ModelAndView mv = new ModelAndView("redirect:/");
 		
-		if("admin".equals(req.getParameter("id")) && "admin".equals(req.getParameter("pwd")) ) {
+		if("admin".equals(req.getParameter("userInfo")) ) {
 		/*Map map = new HashMap();
 		map.put("admin_id", "admin");
 		map.put("admin_name", "administrator");*/
