@@ -19,7 +19,16 @@
           <p>&nbsp;</p>
 		<section class="container">
          <form role="form" method="get" name="boardlist"  action="boardlist.do">
-           
+           		<label for="condition">검색조건</label>
+			<select name="condition" id="condition">
+				<option value="title" <c:if test="${condition eq 'title' }">selected</c:if>>제목</option>
+				<option value="writer" <c:if test="${condition eq 'writer' }">selected</c:if>>작성자</option>
+				<option value="content" <c:if test="${condition eq 'content' }">selected</c:if>>내용</option>
+				
+			</select>
+           		<input type="text" name="keyword" id="keyword"
+				placeholder="검색어 ..." value="${keyword }"/>
+				<button type="submit">검색</button>
               <table class="table table-hover">
               <thead>
                   <tr>

@@ -14,9 +14,21 @@
    
    <!-- 게시판 리스트 -->
        <select id="boardlist" parameterType="hashMap" resultType="hashMap">
-   	SELECT @rownum:=@rownum+1 ROWNUM, T.*
+   	SELECT @rownum:=@rownum+1 ROWNUM,T.* 
 	FROM shop_db.board_manage T,(SELECT @ROWNUM := 0) TMP
+	<choose>
+		<when test="condition == 'title' and keyword != ('')">
+			WHERE title LIKE concat('%',#{keyword},'%')
+		</when>					
+		<when test="condition == 'writer' and keyword != ('')">
+			WHERE writer LIKE concat('%',#{keyword},'%')  
+		</when>
+		<when test="condition == 'content' and keyword != ('')">
+			WHERE content LIKE concat('%',#{keyword},'%')  
+		</when>
+	</choose>
 	ORDER BY regdate DESC, ROWNUM DESC;
+		
    </select>
    <!-- 게시글 조회 -->
    <select id="boardread" parameterType="hashMap" resultType="hashMap">
