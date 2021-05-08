@@ -7,9 +7,10 @@
 		<table class="table">
                     <thead>
                         <tr>
-                            <th class="text-center">재품이름</th>
-                            <th class="text-center">사이즈</th>
-                            <th class="text-center">가격</th>
+                            <th> </th>
+                            <th>제품이름</th>
+                            <th>사이즈</th>
+                            <th>가격</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -18,10 +19,12 @@
 			<td>
 				<img src="resources/images/close/${list.product_code}.jpg" width="120px" height="110px"> 
 			</td>
-			<td align="center">
+			<td>
 				<a href="detail.do?product_code=${list.product_code}">${list.product_name}</a><br>
 			</td>
-			<td class="text-center"> ${list.prodName}</td>
+			<td>
+				<a>S M L XL F</a>
+			</td>
 			<td>
 				<fmt:formatNumber value="${list.product_price}" pattern="###,###,###"/>
 			</td>

@@ -13,7 +13,7 @@
 	
 	<select id="search" parameterType="hashMap" resultType="hashmap">
 		SELECT *
-		FROM shop_db.test_goods
+		FROM shop_db.goods_detail
 			WHERE product_name LIKE concat('%',#{search},'%')
 	</select>
 	 <!-- 게시글 수정 -->

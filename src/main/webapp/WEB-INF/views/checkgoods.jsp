@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+   	<link rel="stylesheet" href="resources/css/bootstrap.min.css">
+   	<link rel="stylesheet" href="resources/Js/bootstrap.min.js">
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 <style type="text/css">
@@ -22,7 +24,7 @@
 <body>
 <div class="wrap">
 <div class="subject">
-	<h2>배송조회</h2>
+	<h3>배송조회</h3><br>
 	<form action="myitem.do" method="post">
 	<input type="text" name="orderNo" placeholder="주문번호를 입력하세요">
 	<input type="submit" value="확인하기">

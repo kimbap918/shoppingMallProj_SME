@@ -19,7 +19,7 @@
 <!-- 제품 상세페이지 문장 -->
 <select id="detailPage" parameterType="hashMap" resultType="hashMap">
 		SELECT * 
-		FROM shop_db.test_goods
+		FROM shop_db.goods_detail
 		where product_code = #{product_code}
 </select>
 	

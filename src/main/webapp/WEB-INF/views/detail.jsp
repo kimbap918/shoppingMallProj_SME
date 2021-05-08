@@ -208,7 +208,7 @@ function change () {
 		var radio2 = $(':input[name=size]:radio:checked').val();
 		
 		if(!radio1) {
-			alert("색상을 선택해주세여!");
+			alert("색상을 선택해주세요");
 			return false;
 		}
 		else if(!radio2){

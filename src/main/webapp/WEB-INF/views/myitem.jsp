@@ -1,9 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+   	<link rel="stylesheet" href="resources/css/login.css">
+   	<link rel="stylesheet" href="resources/css/bootstrap.min.css">
+   	<link rel="stylesheet" href="resources/Js/bootstrap.min.js">
+
+</head>
 <body>
-<h1>ÇöÀç °í°´´ÔÀÇ ¼ÒÁßÇÑ ¹°°Ç ¹è¼ÛÇöÈ²Àº?</h1>
+<h2>í˜„ì¬ ê³ ê°ë‹˜ì˜ ì†Œì¤‘í•œ ë¬¼ê±´ ë°°ì†¡í˜„í™©ì€?</h2>
 <c:forEach var="list" items="${list}">
-<h2>Á¦Ç°¹øÈ£${list.orderNo}´Â ${list.orderStatus} »óÅÂ ÀÔ´Ï´Ù.</h2>
-ÇØ´çÁ¦Ç° ¼ÛÀå¹øÈ£´Â${list.deliveryNum}ÀÔ´Ï´Ù.
+<h3>ì œí’ˆë²ˆí˜¸${list.orderNo}ëŠ” ${list.orderStatus} ìƒíƒœ ì…ë‹ˆë‹¤.</h3>
+<a>í•´ë‹¹ì œí’ˆ ì†¡ì¥ë²ˆí˜¸ëŠ”${list.deliveryNum}ì…ë‹ˆë‹¤.</a>
 </c:forEach>
 </body>
+</html>
