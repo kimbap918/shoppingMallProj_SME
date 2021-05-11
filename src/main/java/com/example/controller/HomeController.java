@@ -118,14 +118,22 @@ public class HomeController {
 	@RequestMapping(value = "loginCheck.do", method = RequestMethod.POST) // 매핑 요청 값, 방법
 	public ModelAndView loginCheck(@RequestParam Map<String, Object> map, HttpServletRequest req) {
 
-		log.debug("Request Parameter : " + map); // 콘솔 로그 출력
-
-		ModelAndView mv = new ModelAndView("redirect:/"); // 괄호 안의 값을 보여주는것, 이동하는것이 x
-
+		log.debug("Request Parameter : " + map); 
+		
+		
+		ModelAndView mv = new ModelAndView("redirect:/");
+		if(req.getParameter("id").equals("admin")) {
+			HttpSession s = req.getSession();
+			map.put("admin_id", "admin");
+			map.put("admin_name", "관리자");
+			s.setAttribute("admin", map);
+			s.setMaxInactiveInterval(30 * 60);
+			mv.addObject("msg", "관리자 로그인 성공");
+		} 
+		
 		Map<String, Object> userInfo = commonService.loginCheck(map);
-		HttpSession s = req.getSession(); // 세션 생성
-
 		if (userInfo != null) { // 널 체크
+			HttpSession s = req.getSession(); // 세션 생성
 			s.setAttribute("userInfo", userInfo); // 세션에 속성값 부여
 			s.setMaxInactiveInterval(30 * 60); // 세션 시간	
 			mv.addObject("msg", "로그인 성공"); // 성공 확인
@@ -136,34 +144,10 @@ public class HomeController {
 		}		
 		return mv;
 	}
-	
-	@RequestMapping(value = "AdminloginCheck.do", method = RequestMethod.POST)
-	public ModelAndView AdminloginCheck(@RequestParam Map<String, Object> map, HttpServletRequest req) {
 
-		log.debug("Request Parameter : " + map);
-
-		ModelAndView mv = new ModelAndView("redirect:/");
 		
-		if("admin".equals(req.getParameter("userInfo")) ) {
-		/*Map map = new HashMap();
-		map.put("admin_id", "admin");
-		map.put("admin_name", "administrator");*/
-		req.getSession().setAttribute("AdminUserInfo", map);
-		Map<String, Object> AdminUserInfo = commonService.loginCheck(map);
-		HttpSession s = req.getSession();
-		if (AdminUserInfo != null) { 
-			s.setAttribute("AdminUserInfo", AdminUserInfo);
-			s.setMaxInactiveInterval(30 * 60);
-			mv.addObject("msg", "로그인 성공"); 
-		}
-		else {
-			mv.addObject("msg", "아이디 및 비밀번호를 다시 확인해주세요.");
-			mv.setViewName("/login");
-		}
-		}
-		return mv;
-	}
-	
+
+		
 
 	@RequestMapping(value = "joinCheck.do", method = RequestMethod.POST) 
 	public ModelAndView joinCheck(@RequestParam Map<String, Object> map, HttpServletRequest req) { //
