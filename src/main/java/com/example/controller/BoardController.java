@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import java.util.HashMap;
 //import java.util.ArrayList;
 //import java.util.Arrays;
 //import java.util.HashMap;
@@ -10,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 //import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
-import org.json.simple.JSONObject;
+//import org.json.simple.JSONObject;
 import org.springframework.stereotype.Controller;
 //import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -47,11 +48,12 @@ public class BoardController {
 
 	@ResponseBody
 	@RequestMapping(value = "/boardWriteAjax.do", method = RequestMethod.POST)
-	public JSONObject boardWriteAjax(@RequestParam Map<String, Object> map, HttpServletRequest req) {
+	public HashMap<String, Object> boardWriteAjax(@RequestParam Map<String, Object> map, HttpServletRequest req) {
 
 		log.debug("Request Parameter " + map); // 콘솔 로그 출력
 
-		JSONObject jobj = new JSONObject();
+		/*JSONObject jobj = new JSONObject();*/
+		HashMap<String,Object> jobj = new HashMap<String,Object>();
 		jobj.put("code", 400);
 
 		int cnt = boardService.boardwrite(map);
@@ -66,18 +68,17 @@ public class BoardController {
 	// 게시판 삭제
 	@ResponseBody
 	@RequestMapping(value = "/boarddelete.do", method = RequestMethod.POST)
-	public JSONObject boarddelete(@RequestBody String bno, @RequestParam Map<String, Object> map,
+	public HashMap<String, Object> boarddelete(@RequestBody String bno, @RequestParam Map<String, Object> map,
 			HttpServletRequest req) {
-
 		log.info("삭제 bno Parameter : " + bno);
 
-		JSONObject jobj = new JSONObject();
+		/*JSONObject jobj = new JSONObject();*/
+		HashMap<String,Object> jobj = new HashMap<String,Object>();
 		jobj.put("code", 400);
 
 		int rs = boardService.boarddelete(bno);
 		if (rs > 0) {
 			jobj.put("code", 200);
-		//	req.getSession().setAttribute("userInfo", map);
 		}
 
 		return jobj;
@@ -85,13 +86,14 @@ public class BoardController {
 
 	@ResponseBody
 	@RequestMapping(value = "/boardupdate.do", method = RequestMethod.POST)
-	public JSONObject boardupdate(@RequestParam Map<String, Object> map, HttpServletRequest req) {
+	public HashMap<String, Object> boardupdate(@RequestParam Map<String, Object> map, HttpServletRequest req) {
 
 		log.info("수정 : " + map);
 
-		JSONObject jobj = new JSONObject();
+		/*JSONObject jobj = new JSONObject();*/
+		HashMap<String,Object> jobj = new HashMap<String,Object>();
 		jobj.put("code", 400);
-
+		
 		int rs = boardService.boardupdate(map);
 		if (rs > 0)
 			jobj.put("code", 200);

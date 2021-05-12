@@ -10,11 +10,11 @@
             <form method="post" action="order.do" onSubmit="return RequiredBox(this)">
             <c:choose>
                 <c:when test="${!empty userInfo.id}">
-                    <h3>${userInfo.name}님의장바구니입니다.</h3>
+                    <h3>${userInfo.name}님의 장바구니입니다.</h3>
                     <input type="hidden" value="shop_db.customer_cart" name="table">
                 </c:when>
                 <c:when test="${empty userInfo.id}">
-                    <h3>비회원님의장바구니입니다.</h3>
+                    <h3>비회원님의 장바구니입니다.</h3>
                     <input type="hidden" value="shop_db.noncustomer_cart" name="table">
                 </c:when>
             </c:choose>

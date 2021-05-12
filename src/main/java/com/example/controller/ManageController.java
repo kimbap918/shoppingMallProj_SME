@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import java.util.HashMap;
 //import java.util.ArrayList;
 //import java.util.Arrays;
 //import java.util.HashMap;
@@ -10,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 //import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
-import org.json.simple.JSONObject;
+//import org.json.simple.JSONObject;
 import org.springframework.stereotype.Controller;
 //import org.springframework.web.bind.annotation.PostMapping;
 //import org.springframework.web.bind.annotation.RequestBody;
@@ -172,11 +173,12 @@ public class ManageController {
 
 	@ResponseBody
 	@RequestMapping(value = "/modMember.do", method = RequestMethod.POST)
-	public JSONObject modMember(@RequestParam Map<String, Object> map, HttpServletRequest req) {
+	public HashMap<String, Object> modMember(@RequestParam Map<String, Object> map, HttpServletRequest req) {
 
 		log.info("수정하는 회원이 보낸 정보 Parameter : " + map);
 
-		JSONObject jobj = new JSONObject();
+		//JSONObject jobj = new JSONObject();
+		HashMap<String,Object> jobj = new HashMap<String,Object>();
 		jobj.put("code", 400);
 
 		int rs = manageService.updateMember(map);

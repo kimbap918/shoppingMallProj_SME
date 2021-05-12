@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import java.util.HashMap;
 //import java.util.ArrayList;
 //import java.util.Arrays;
 //import java.util.HashMap;
@@ -10,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
-import org.json.simple.JSONObject;
+//import org.json.simple.JSONObject;
 import org.springframework.stereotype.Controller;
 //import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -47,11 +48,12 @@ public class HomeController {
 
 	@ResponseBody
 	@RequestMapping(value = "/idcheck.do", method = RequestMethod.POST)
-	public JSONObject idcheck(@RequestBody String id) {
+	public HashMap<String, Object> idcheck(@RequestBody String id) {
 
 		log.info("id check Parameter : " + id);
-
-		JSONObject jobj = new JSONObject();
+		
+		//JSONObject jobj = new JSONObject();
+		HashMap<String,Object> jobj = new HashMap<String,Object>();
 		jobj.put("cnt", 0);
 
 		int cnt = commonService.idcheck(id);
@@ -122,7 +124,7 @@ public class HomeController {
 		
 		
 		ModelAndView mv = new ModelAndView("redirect:/");
-		if(req.getParameter("id").equals("admin")) {
+		if(req.getParameter("id").equals("admin") && req.getParameter("pwd").equals("admin")) {
 			HttpSession s = req.getSession();
 			map.put("admin_id", "admin");
 			map.put("admin_name", "관리자");

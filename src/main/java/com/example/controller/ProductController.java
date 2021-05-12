@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
-import org.json.simple.JSONObject;
+//import org.json.simple.JSONObject;
 import org.springframework.stereotype.Controller;
 //import org.springframework.web.bind.annotation.PostMapping;
 //import org.springframework.web.bind.annotation.RequestBody;
@@ -115,10 +115,11 @@ public class ProductController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/cartAjax.do", method = RequestMethod.POST)
-	public JSONObject cartAjax(@RequestParam Map<String, Object> map, HttpServletRequest req) {
+	public HashMap<String, Object> cartAjax(@RequestParam Map<String, Object> map, HttpServletRequest req) {
 		log.debug("Request Parameter " + map); // 콘솔 로그 출력
 
-		JSONObject jobj = new JSONObject();
+		//JSONObject jobj = new JSONObject();
+		HashMap<String,Object> jobj = new HashMap<String,Object>();
 		jobj.put("code", 400);
 
 		int cnt = productService.cart(map);
@@ -138,7 +139,7 @@ public class ProductController {
 		log.debug("Request Parameter : " + map);
 		ModelAndView mv = new ModelAndView("redirect:/resultcart.do");
 
-		Map info = (Map) session.getAttribute("userInfo");
+		Map<?, ?> info = (Map<?, ?>) session.getAttribute("userInfo");
 
 		if (session.getAttribute("userInfo") != null) {
 			map.put("table", "shop_db.customer_cart");
@@ -161,7 +162,7 @@ public class ProductController {
 		log.debug("Request Parameter : " + map);
 		ModelAndView mv = new ModelAndView("/resultcart");
 
-		Map info = (Map) session.getAttribute("userInfo");
+		Map<?, ?> info = (Map<?, ?>) session.getAttribute("userInfo");
 
 		if (session.getAttribute("userInfo") != null) {
 			map.put("table", "shop_db.customer_cart");
@@ -223,7 +224,7 @@ public class ProductController {
 		String[] price = req.getParameterValues("price");
 
 		// 2번
-		List<Map<String, Object>> carts = new ArrayList();
+		List<Map<String, Object>> carts = new ArrayList<Map<String, Object>>();
 		for (int i = 0; i < price.length; i++) {
 			Map<String, Object> columns = new HashMap<String, Object>();
 			columns.put("prodCode", prodCode[i]);

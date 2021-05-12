@@ -78,7 +78,8 @@
 	
 	 <script src="https://code.jquery.com/jquery-3.5.1.js"
       integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-      crossorigin="anonymous"></script>
+      crossorigin="anonymous">
+     </script>
       <script>
     //버튼이 있는 해당 row의 발주코드(pk값)을 찾아서 전달해주는 놈임
     $('button[name=delUserBtn]').click(function (){
