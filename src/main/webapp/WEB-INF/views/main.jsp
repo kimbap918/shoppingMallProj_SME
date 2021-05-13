@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-	response.setHeader("Pragma", "no-cache");
+response.setHeader("Pragma", "no-cache");
 response.setHeader("Cache-Control", "no-cache");
 response.setHeader("Cache-Control", "no-store");
 response.setDateHeader("Expires", 0L);
@@ -14,9 +14,10 @@ response.setDateHeader("Expires", 0L);
 		<li class="slide slide1">
 			<div class="container slide_contents">
 				<div class="contents jumbotron">
+				
 					<h2>SME쇼핑몰</h2>
 					<h3>환영합니다</h3>
-					<p>저희가 코트의 중심입니다!</p>
+					<p>코트의 중심, SME 쇼핑몰입니다.</p>
 				</div>
 			</div>
 		</li>
@@ -24,10 +25,10 @@ response.setDateHeader("Expires", 0L);
 			<div class="container slide_contents">
 				<div class="contents jumbotron">
 					<h2>코트추천</h2>
-					<h3>SME의 자신작 보러가기</h3>
+					<h3>SME의 최신제품 보러가기</h3>
 					<p>코트란 이런 것이다.</p>
 					<div class="price_order">
-						<span class="price">Price : 9193000원 부터</span> <a
+						<span class="price">Price : 165,000원 부터</span> <a
 							class="order_now" href="detail.do?product_code='SHY001'">Order
 							now</a>
 					</div>
@@ -37,9 +38,9 @@ response.setDateHeader("Expires", 0L);
 		<li class="slide slide3">
 			<div class="container slide_contents">
 				<div class="contents jumbotron">
-					<h2>아직공백입니다.</h2>
-					<h3>여기는 없어</h3>
-					<p>추가할게요</p>
+					<h2>코트 스타일링</h2>
+					<h3>추천 코트 스타일</h3>
+					<p>겨울 시즌 추천</p>
 				</div>
 			</div>
 		</li>
@@ -58,11 +59,10 @@ response.setDateHeader("Expires", 0L);
 				<li id="product_02" class="col-md-3">
 					<div class="list_contents">
 						<div class="default">
-							<img src="resources/images/coat_0${sts.index}.jpg" alt="코트">
+							<img src="resources/images/${list.product_code}.jpg" alt="코트">
 							<h3>${list.product_name}</h3>
 							<h4>
-								<fmt:formatNumber pattern="#,###" value="${list.product_price}" />
-								부터..
+								<fmt:formatNumber pattern="#,###" value="${list.product_price}" />&#50896;
 							</h4>
 						</div>
 						<div class="hover">
