@@ -64,16 +64,24 @@ a {
 .product_pictures {
     text-align: center;
 }
+
+.big_img {
+	height: 200px;
+	width: 200px;
+	
+}
 .product_pictures .thumb_img{
     margin-top: 70px;
     display: flex;
     justify-content: space-between;
+    
 }
 .product_pictures .thumb_img li{
     text-align: center;
     background: #f4f6f8;
-    width:95px ;
-    height:80px ;
+    width:95px;
+    height:80px;
+    object-fit: cover;
     display: flex;
     align-items: center;
     justify-content: center;

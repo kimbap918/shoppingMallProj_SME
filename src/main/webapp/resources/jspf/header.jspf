@@ -6,22 +6,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>코트의 중심 SME 입니다.</title>
-   
-    <!-- fontawesome -->
-    <script src="resources/Js/all.min.js"></script>
+
+    <!-- fontawesome -->    
     <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <script src="resources/Js/header.js"></script>
+    <script src="resources/Js/all.min.js"></script>
 
     <!--bootstrap grid-->
     <link rel="stylesheet" href="resources/css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="resources/css/bootstrap-theme.css">
     <link rel="stylesheet" href="resources/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="resources/css/header.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>코트의 중심 SME 입니다.</title>
 
 </head>
 <body>

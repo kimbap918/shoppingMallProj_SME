@@ -8,6 +8,7 @@ response.setDateHeader("Expires", 0L);
 %>
 <!-- 뒤로가기 캐시 삭제 -->
 <link rel="stylesheet" href="resources/css/main.css">
+
 <section class="main_slides">
 	<h2 class="hidden">main_slides</h2>
 	<ul>

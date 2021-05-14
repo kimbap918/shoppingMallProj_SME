@@ -35,4 +35,4 @@ $(function(){
 
             $bigImg.attr('src',targetImgPath);
        });
-});//document ready function
+});//document ready function 
