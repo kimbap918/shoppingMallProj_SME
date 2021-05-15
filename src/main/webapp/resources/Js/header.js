@@ -9,7 +9,11 @@ $(function(){
 
     $('.main_slides ul').bxSlider({
         controls:false,
-        mode:'vertical'
+        auto:true,
+        mode:'vertical',
+        speed:500,
+        paper:true,
+        autoHover:true
     });
 
     var rateForm = $('.rateform'),
