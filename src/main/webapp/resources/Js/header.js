@@ -33,10 +33,10 @@ $(function(){
         });
     });
 
-	$thumbImgList.click(function(){
+	$thumb_img.click(function(){
             $(this).addClass('active').siblings().removeClass('active');
             var targetImgPath = 'images/' + $(this).find('img').attr('data-target');
 
-            $bigImg.attr('src',targetImgPath);
+            $big_img.attr('src',targetImgPath);
        });
 });//document ready function 

@@ -55,8 +55,7 @@
 			<div class="row">
 				<c:forEach var="get" items="${get}">
 					<div class="product_pictures col-md-5">
-						<!-- 이미지 수정필요 사이즈가 이상함 -->
-						<img src="resources/images/close/${get.product_code}.jpg"
+						<img src="resources/images/close/goods/${get.product_code}.jpg"
 							alt="coat" class="big_img">
 						<ul class="thumb_img">
 						 	<li class="active"><img
@@ -64,25 +63,13 @@
 								data-target="${get.product_code}.jpg" alt=""></li>
 							<li><img
 								src="resources/images/close/thumb/SHY001_2_thumb.jpg"
-								data-target="SHY001_2.jpg" alt=""></li>
+								data-target="SHY001_1.jpg" alt=""></li>
 							<li><img
 								src="resources/images/close/thumb/SHY001_3_thumb.jpg"
 								data-target="SHY001_3.jpg" alt=""></li>
 							<li><img
 								src="resources/images/close/thumb/SHY001_0_thumb.jpg"
 								data-target="SHY001_0.jpg" alt=""></li>
-							<!--  li class="active"><img
-								src="resources/images/close/thumb/${get.product_code}_1_thumb.jpg"
-								data-target="${get.product_code}_1.jpg" alt=""></li>
-							<li><img
-								src="resources/images/close/thumb/${get.product_code}_2_thumb.jpg"
-								data-target="${get.product_code}_2.jpg" alt=""></li>
-							<li><img
-								src="resources/images/close/thumb/${get.product_code}_3_thumb.jpg"
-								data-target="${get.product_code}_3.jpg" alt=""></li>
-							<li><img
-								src="resources/images/close/thumb/${get.product_code}_0_thumb.jpg"
-								data-target="${get.product_code}_0.jpg" alt=""></li>-->
 						</ul>
 					</div>
 

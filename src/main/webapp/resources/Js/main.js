@@ -1,4 +1,4 @@
-/* 해당 페이지는 메인페이지 슬라이더를 담당합니다*/
+/* 해당 페이지는 메인페이지 슬라이더를 담당합니다
 $(function(){
     var $searchBtn = $('.shopping_nav .search_btn'),
         $searchForm = $('header form');
@@ -7,9 +7,13 @@ $(function(){
         $searchForm.toggleClass('active');
     });
 
-    $('.main_slides ul').bxSlider({
+        $('.main_slides ul').bxSlider({
         controls:false,
-        mode:'vertical'
+        auto:true,
+        mode:'vertical',
+        speed:500,
+        paper:true,
+        autoHover:true
     });
 
     var rateForm = $('.rateform'),
@@ -29,10 +33,10 @@ $(function(){
         });
     });
 	
-	$thumbImgList.click(function(){
+	$thumb_img.click(function(){
             $(this).addClass('active').siblings().removeClass('active');
             var targetImgPath = 'images/' + $(this).find('img').attr('data-target');
 
-            $bigImg.attr('src',targetImgPath);
+            $big_img.attr('src',targetImgPath);
        });
-});//document ready function
+});//document ready function */

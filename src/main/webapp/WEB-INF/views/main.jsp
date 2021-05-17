@@ -15,7 +15,6 @@ response.setDateHeader("Expires", 0L);
 		<li class="slide slide1">
 			<div class="container slide_contents">
 				<div class="contents jumbotron">
-				
 					<h2>SME쇼핑몰</h2>
 					<h3>환영합니다</h3>
 					<p>코트의 중심, SME 쇼핑몰입니다.</p>
