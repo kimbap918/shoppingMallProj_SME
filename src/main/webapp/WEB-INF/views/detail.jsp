@@ -57,7 +57,7 @@
 					<div class="product_pictures col-md-5">
 						<!-- 이미지 수정필요 사이즈가 이상함 -->
 						<img src="resources/images/close/${get.product_code}.jpg"
-							data-target="${get.product_code}.jpg" alt="coat" class="big_img">
+							alt="coat" class="big_img">
 						<ul class="thumb_img">
 						 	<li class="active"><img
 								src="resources/images/close/thumb/${get.product_code}.jpg"

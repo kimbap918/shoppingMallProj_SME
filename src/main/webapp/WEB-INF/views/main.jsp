@@ -30,8 +30,7 @@ response.setDateHeader("Expires", 0L);
 					<p>코트란 이런 것이다.</p>
 					<div class="price_order">
 						<span class="price">Price : 165,000원 부터</span> <a
-							class="order_now" href="detail.do?product_code='SHY001'">Order
-							now</a>
+							class="order_now" href="detail.do?product_code='SHY001'">Order now</a>
 					</div>
 				</div>
 			</div>
