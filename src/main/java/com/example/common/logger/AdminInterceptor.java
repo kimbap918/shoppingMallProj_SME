@@ -18,7 +18,6 @@ public class AdminInterceptor extends HandlerInterceptorAdapter {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws IOException {
 
     	 try {
-             //userData 세션key를 가진 정보가 널일경우 로그인페이지로 이동
              if(request.getSession().getAttribute("admin") == null){
                  log.error("can not search session ... ");
                  response.sendRedirect("index.do");
@@ -30,13 +29,3 @@ public class AdminInterceptor extends HandlerInterceptorAdapter {
          return true;
      }
  }	
-    /*	log.info("AdminCheck : " + request.getSession().getAttribute("admin"));
-    	  HttpSession s = request.getSession();
-          String adminCheck = (String) s.getAttribute("admin");
-          if(adminCheck == null){
-            response.sendRedirect("index.do");
-            return false;
-          }
-          return true;
-        }
-}*/

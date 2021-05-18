@@ -15,7 +15,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         log.info("sessionCheck : " + request.getSession().getAttribute("userInfo"));
         try {
-            //userData 세션key를 가진 정보가 널일경우 로그인페이지로 이동
+            //userInfo 세션key를 가진 정보가 널일경우 로그인페이지로 이동
             if(request.getSession().getAttribute("userInfo") == null){
                 log.error("can not search session ... ");
                 response.sendRedirect("login.do");
