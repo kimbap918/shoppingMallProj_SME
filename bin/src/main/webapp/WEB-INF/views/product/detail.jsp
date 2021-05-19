@@ -20,7 +20,7 @@
 </head>
 
 <body onload="init();">
-<script language="JavaScript">
+<script type="text/javascript">
 var sell_price;
 var count;
 
@@ -133,13 +133,13 @@ function change () {
 					<c:choose>
 						<c:when test="${!empty userInfo.id}">
 								<ul>
-								<input type="button" id="cartAjax" value="addcart!">
+								<li><input type="button" id="cartAjax" value="addcart!"></li>
 								</ul>
 								<button type="submit" formaction="addcart.do">Order Now</button>
 							</c:when>
 								<c:when test="${empty userInfo.id}">
                                 <ul>
-								<input type="button" id="cartAjax" value="addcart!">
+								<li><input type="button" id="cartAjax" value="addcart!"></li>
                                 </ul>
 								<button type="submit" formaction="addcart.do">Order Now</button>
 								</c:when>

@@ -174,11 +174,6 @@
       </div>
 
    </div>
-   <div id="helper">
-      <a href="#" class="up"><p>↑</p></a> <a href=""><p>■</p></a> <a
-         href="#down_test" class="down"><p>↓</p></a>
-   </div>
-
    <script src="https://code.jquery.com/jquery-3.5.1.js"
       integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
       crossorigin="anonymous"></script>

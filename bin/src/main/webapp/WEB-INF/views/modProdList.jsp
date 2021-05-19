@@ -57,8 +57,8 @@
 		</div>
 		<div class="clear">
 		<br><br>
-		<table align=center>
-		<tr>
+		<table>
+		<tr align="center">
 			<td>
 				<input type="button" value="수정하기" id="modUserButton"/>
 			</td>

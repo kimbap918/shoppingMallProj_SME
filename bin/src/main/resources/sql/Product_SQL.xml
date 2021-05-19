@@ -25,11 +25,16 @@
 	
 <!-- 제품 리스트 문장 -->
 <select id="getList" parameterType="hashMap" resultType="hashmap">
-		select a.*, t.product_name, t.product_price
+		SELECT d.*, t.gender, s.product_name, s.product_price
+		FROM im_db.product_detail as d
+		LEFT JOIN im_db.product_title as t ON d.product_code = t.product_code
+		LEFT JOIN shop_db.goods_detail as s ON t.product_code = s.product_code;
+		
+		<!--  select a.*, t.product_name, t.product_price
  		from (SELECT d.*, t.gender
 		FROM im_db.product_detail d, im_db.product_title t
 		where d.product_code = t.product_code) a, shop_db.goods_detail t
-    	where a.product_code = t.product_code;
+    	where a.product_code = t.product_code;-->
 </select>
 
 	<!-- 장바구니 중복체크 -->
