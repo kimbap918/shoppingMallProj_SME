@@ -200,7 +200,6 @@
 									success : function(xml) {
 										if (xml.code === 200) {
 											alert("장바구니에 등록완료");
-											location.href = '${pageContext.request.contextPath}/detail.do?product_code=SHY001' /* 수정필요 */
 										} else {
 											console.log(xml.code,
 													" :: error code")
