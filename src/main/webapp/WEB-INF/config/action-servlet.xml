@@ -60,6 +60,25 @@
         </mvc:interceptor>
     </mvc:interceptors>
     
+    <!-- DataSource Configuration -->
+	<!-- Broken pipe Exception 해결을 위한 DBCP validationQuery 설정 -->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${jdbc.driverClassName}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <property name="initialSize" value="5"/>
+        <property name="maxActive" value="20"/>
+        <property name="minIdle" value="5"/>
+        <property name="maxWait" value="3000"/>
+        <property name="poolPreparedStatements" value="true"></property>
+        <property name="maxOpenPreparedStatements" value="50"></property>
+        <!-- 특정 시간마다 validationQuery를 실행 셋팅 시작 -->
+        <property name="validationQuery" value="select 1"/>
+        <property name="testWhileIdle" value="true"/>
+        <property name="timeBetweenEvictionRunsMillis" value="7200000"/>
+        <!-- 특정 시간마다 validationQuery를 실행 셋팅 끝 -->
+    </bean>    
 		<aop:aspectj-autoproxy/>
 		<bean id="loggerAspect" class="com.example.common.logger.LoggerAspect" />
 		

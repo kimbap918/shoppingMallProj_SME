@@ -43,7 +43,7 @@ System.out.println("세션아이디 " + test);
 						<td>${list.count}</td>
 						<td><fmt:formatNumber value="${list.price}" pattern="#,###" /></td>
 					</tr>
-					<c:set var="sum" value="${sum + (list.price * list.count)}" />
+					<c:set var="sum" value="${sum + (list.price)}" />
 				</tbody>
 			</c:forEach>
 		</table>

@@ -118,7 +118,7 @@ function RequiredBox() {
 		var hi =  $("input:checkbox[name='box']").is(":checked");
 		
 		if(!hi){
-			alert("하나이상선택해주세요");
+			alert("하나 이상 선택해주세요");
 			return false;
 		}
 }

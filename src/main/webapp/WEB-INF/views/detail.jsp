@@ -58,7 +58,7 @@
 						<img src="resources/images/close/goods/${get.product_code}.jpg"
 							alt="coat" class="big_img">
 						<ul class="thumb_img">
-						 	<li class="active"><img
+							<li class="active"><img
 								src="resources/images/close/thumb/${get.product_code}.jpg"
 								data-target="${get.product_code}.jpg" alt=""></li>
 							<li><img
@@ -132,20 +132,16 @@
 							<div class="order_now">
 								<c:choose>
 									<c:when test="${!empty userInfo.id}">
+										<button type="submit" formaction="addcart.do">주문하기</button>&nbsp;&nbsp;
 										<ul>
-											<li><input type="button" id="cartAjax" value="addcart!"></li>
+											<li><button type="button" id="cartAjax" value="addcart!">장바구니</button></li>
 										</ul>
-										<button type="submit" formaction="addcart.do">Order
-											Now</button>&nbsp;&nbsp;
-								<button type="button" id="cartAjax" value="addcart!">장바구니</button>
-
 									</c:when>
 									<c:when test="${empty userInfo.id}">
+										<button type="submit" formaction="addcart.do">주문하기</button>
 										<ul>
-											<li><input type="button" id="cartAjax" value="addcart!"></li>
+											<li><button type="button" id="cartAjax" value="addcart!">장바구니</button></li>
 										</ul>
-										<button type="submit" formaction="addcart.do">Order
-											Now</button>
 									</c:when>
 								</c:choose>
 							</div>

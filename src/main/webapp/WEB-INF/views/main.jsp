@@ -28,8 +28,8 @@ response.setDateHeader("Expires", 0L);
 					<h3>SME의 최신제품 보러가기</h3>
 					<p>코트란 이런 것이다.</p>
 					<div class="price_order">
-						<span class="price">Price : 165,000원 부터</span> <a
-							class="order_now" href="detail.do?product_code='SHY001'">Order now</a>
+						<span class="price">Price : 165,000원 부터</span> 
+						<a class="order_now" href="detail.do?product_code=SHY001">Order now</a>
 					</div>
 				</div>
 			</div>
@@ -58,7 +58,7 @@ response.setDateHeader("Expires", 0L);
 				<li id="product_02" class="col-md-3">
 					<div class="list_contents">
 						<div class="default">
-							<img src="resources/images/${list.product_code}.jpg" alt="코트">
+							<a href="detail.do?product_code=${list.product_code}"><img src="resources/images/${list.product_code}.jpg" alt="코트"></a>
 							<h3>${list.product_name}</h3>
 							<h4>
 								<fmt:formatNumber pattern="#,###" value="${list.product_price}" />&#50896;
