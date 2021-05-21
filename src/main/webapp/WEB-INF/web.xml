@@ -62,7 +62,7 @@
 	</filter-mapping>
 	<filter>
 	    <filter-name>cors</filter-name>
-	    <filter-class>egovframework.rte.tex.cros.SimpleCORSFilter</filter-class>   
+	    <filter-class>com.example.cors.CorsFilter</filter-class>   
 	</filter>
 	<filter-mapping>
 	    <filter-name>cors</filter-name>

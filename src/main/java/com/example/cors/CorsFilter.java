@@ -1,4 +1,4 @@
-package egovframework.rte.tex.cros;
+package com.example.cors;
 
 import java.io.IOException;
 import javax.servlet.Filter;
@@ -9,7 +9,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletResponse;
 
-public class SimpleCORSFilter implements Filter {
+public class CorsFilter implements Filter {
 	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
 			throws IOException, ServletException {
 		HttpServletResponse response = (HttpServletResponse) res;
@@ -19,8 +19,7 @@ public class SimpleCORSFilter implements Filter {
 		response.setHeader("Access-Control-Allow-Headers", "x-requested-with");
 		response.setHeader("Access-Control-Allow-Origin", "*"); /*
 																 * 여기의 *을 내가 허용하고 싶은 특정 도메인으로 바꾸면 설정한 도메인에 한에서만 크로스 도메인을
-																 * 허용하게된다. 여러 도메인의 경우 여러번 설정하면된다.
-																 */
+																 * 허용하게됨 */
 		chain.doFilter(req, res);
 	}
 	public void init(FilterConfig filterConfig) {
