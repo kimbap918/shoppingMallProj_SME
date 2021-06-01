@@ -5,8 +5,8 @@
 	
 	<bean id="dataSourceSpied" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
-		<property name="url" value ="jdbc:mysql://choicho.mysql.database.azure.com:3306/?autoReconnect=true&amp;serverTimezone=UTC"/>
-		<property name="username" value="choi_admin@choicho" /> 
+		<property name="url" value ="jdbc:mysql://database-1.cu5eqyqkc3ar.us-east-2.rds.amazonaws.com:3306/?autoReconnect=true&amp;serverTimezone=UTC"/>
+		<property name="username" value="choicho" /> 
 		<property name="password" value="jun901800!" />
 		<property name="initialSize" value="5"/>
         <property name="maxActive" value="20"/>
