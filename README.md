@@ -85,7 +85,7 @@ SME 쇼핑몰 프로젝트에서는 재고관리와 ERP를 연동한 웹 쇼핑�
 
 1. Usecase Diagram 
 
-![스크린샷 2022-07-06 오후 4.31.50](README.assets/스크린샷 2022-07-06 오후 4.31.50.png)
+![usecase](README.assets/usecase.png)
 
 
 
